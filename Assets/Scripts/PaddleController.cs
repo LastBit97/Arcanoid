@@ -5,7 +5,7 @@ using UnityEngine;
 public class PaddleController : MonoBehaviour
 {
     private float horizontalInput;
-    private float speed = 2.0f;
+    private float speed = 10.0f;
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
@@ -18,7 +18,7 @@ public class PaddleController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         PaddleControl();
     }
@@ -26,7 +26,7 @@ public class PaddleController : MonoBehaviour
     private void PaddleControl()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        float positionX = rb.position.x + horizontalInput * Time.deltaTime * speed;
+        float positionX = rb.position.x + horizontalInput * Time.fixedDeltaTime * speed;
         positionX = Mathf.Clamp(positionX, -borderPosition + (sr.size.x / 2), borderPosition - (sr.size.x / 2));
         rb.MovePosition(new Vector2(positionX, rb.position.y));
     }
