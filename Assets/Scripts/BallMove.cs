@@ -7,7 +7,7 @@ public class BallMove : MonoBehaviour
 {
     private Rigidbody2D ballRb;
     private bool isActive;
-    private const float Force = 300;
+    private const float Force = 250;
     private const float OffsetX = 100;
     void Start()
     {
@@ -15,7 +15,6 @@ public class BallMove : MonoBehaviour
         ballRb.bodyType = RigidbodyType2D.Kinematic;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -29,6 +28,22 @@ public class BallMove : MonoBehaviour
         isActive = true;
         transform.SetParent(null);
         ballRb.bodyType = RigidbodyType2D.Dynamic;
-        ballRb.AddForce(new Vector2(OffsetX, Force));
+        //ballRb.AddForce(new Vector2(OffsetX, Force)); // м€ч стартует под углом
+        ballRb.AddForce(Vector2.up * Force); // м€ч стартует строго вверх
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out PaddleController paddle))
+        {
+            ballRb.velocity = Vector2.zero;
+            float touchPointX = collision.contacts[0].point.x;
+            float paddleCenterX = paddle.gameObject.GetComponent<Transform>().position.x;
+            float differenceX = paddleCenterX - touchPointX; // разница между центром и точкой касани€
+            float directionBall = touchPointX < paddleCenterX ? -1 : 1;
+            float forceX = directionBall * Mathf.Abs(differenceX * (Force / 2));
+
+            ballRb.AddForce(new Vector2(forceX, Force));
+        }
     }
 }
