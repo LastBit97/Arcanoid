@@ -17,7 +17,7 @@ public class BallMove : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isActive)
         {
             BallActivate();
         }
@@ -32,6 +32,7 @@ public class BallMove : MonoBehaviour
         ballRb.AddForce(Vector2.up * Force); // м€ч стартует строго вверх
     }
 
+    // –асчЄт полета м€ча после столкновени€ с Paddle
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.TryGetComponent(out PaddleController paddle))
