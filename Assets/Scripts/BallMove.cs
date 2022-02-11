@@ -33,7 +33,7 @@ public class BallMove : MonoBehaviour
     }
 
     // Расчёт полета мяча после столкновения с Paddle
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void MoveCollision(Collision2D collision)
     {
         if (collision.gameObject.TryGetComponent(out PaddleController paddle))
         {

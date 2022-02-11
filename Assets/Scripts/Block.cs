@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class Block : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class Block : MonoBehaviour
         spriteRenderer.color = blockData.BaseColor;
         life = sprites.Count;
         spriteRenderer.sprite = sprites[life - 1];
+        MainModule main = GetComponent<ParticleSystem>().main;
+        main.startColor = spriteRenderer.color;
     }
 
     public void ApplyDamage()
@@ -26,7 +29,9 @@ public class Block : MonoBehaviour
         life--;
         if (life < 1)
         {
-            Destroy(gameObject);
+            spriteRenderer.enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<ParticleSystem>().Play();
         }
         else
         {
