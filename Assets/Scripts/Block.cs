@@ -7,10 +7,14 @@ public class Block : MonoBehaviour
 {
     private static int count = 0;
 
-    private List<Sprite> sprites;
-    private int score;
-    private SpriteRenderer spriteRenderer;
-    private int life;
+    [SerializeField] private List<Sprite> sprites;
+    [SerializeField] private int score;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private int life;
+
+#if UNITY_EDITOR
+    public BlockData BlockData;
+#endif
 
     public void SetData(BlockData blockData)
     {

@@ -1,20 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine;
 
-public class BlockGenerator : MonoBehaviour
+public class BlocksGenerator
 {
-    [SerializeField] private List<BlockData> blocks;
-
-    private void Start()
+    public void Generate(GameLevel gameLevel, Transform parent)
     {
-        for (int i = 0; i < blocks.Count; i++)
+
+        for (int i = 0; i < gameLevel.Blocks.Count; i++)
         {
-            GameObject game = Instantiate(blocks[i].Prefab, new Vector3(0 + i, 0, 0), Quaternion.identity);
+            GameObject game;
+#if UNITY_EDITOR
+            game = PrefabUtility.InstantiatePrefab(gameLevel.Blocks[i].Block.Prefab, parent) as GameObject;
             if (game.TryGetComponent(out Block block))
             {
-                block.SetData(blocks[i]);
+                block.BlockData = gameLevel.Blocks[i].Block;
+                block.SetData(gameLevel.Blocks[i].Block);
             }
+#else
+            game = GameObject.Instantiate(gameLevel.Blocks[i].Block.Prefab, parent);
+#endif
+            game.transform.position = gameLevel.Blocks[i].Position;
         }
+
     }
 }
