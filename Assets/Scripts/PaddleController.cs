@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class PaddleController : MonoBehaviour
 {
-    private float horizontalInput;
-    private float speed = 10.0f;
+    private float _horizontalInput;
+    private float _speed = 5.0f;
 
-    private Rigidbody2D rb;
-    private SpriteRenderer sr;
+    private Rigidbody2D _rigidBody2d;
+    private SpriteRenderer _spriteRenderer;
 
     private float borderPosition = 2.4f;
+    private float _moveX = 0f;
 
-    void Start()
+    void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
+        _rigidBody2d = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void FixedUpdate()
@@ -25,9 +26,23 @@ public class PaddleController : MonoBehaviour
 
     private void PaddleControl()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        float positionX = rb.position.x + horizontalInput * Time.fixedDeltaTime * speed;
-        positionX = Mathf.Clamp(positionX, -borderPosition + (sr.size.x / 2), borderPosition - (sr.size.x / 2));
-        rb.MovePosition(new Vector2(positionX, rb.position.y));
+        float positionX = _rigidBody2d.position.x + _moveX * Time.fixedDeltaTime * _speed;
+        positionX = Mathf.Clamp(positionX, -borderPosition + (_spriteRenderer.size.x / 2), borderPosition - (_spriteRenderer.size.x / 2));
+        _rigidBody2d.MovePosition(new Vector2(positionX, _rigidBody2d.position.y));
+    }
+
+    private void OnEnable()
+    {
+        PlayerInput.OnMove += Move;
+    }
+
+    private void OnDisable()
+    {
+        PlayerInput.OnMove -= Move;
+    }
+
+    private void Move(float moveX)
+    {
+        _moveX = moveX;
     }
 }

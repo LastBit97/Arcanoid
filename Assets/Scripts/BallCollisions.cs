@@ -10,9 +10,9 @@ public class BallCollisions : MonoBehaviour
     {
         ball.MoveCollision(collision);
 
-        if (collision.gameObject.TryGetComponent(out Block block))
+        if (collision.gameObject.TryGetComponent(out IDamageable damageable))
         {
-            block.ApplyDamage();
+            damageable.ApplyDamage();
         }
     }
 }

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.ParticleSystem;
 
-public class Block : MonoBehaviour
+public class Block : MonoBehaviour, IDamageable
 {
     private static int count = 0;
 
-    [SerializeField] private List<Sprite> sprites;
-    [SerializeField] private int score;
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private int life;
+    [SerializeField] private List<Sprite> _sprites;
+    [SerializeField] private int _score;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private int _life;
 
 #if UNITY_EDITOR
     public BlockData BlockData;
@@ -18,28 +18,28 @@ public class Block : MonoBehaviour
 
     public void SetData(BlockData blockData)
     {
-        sprites = new List<Sprite>(blockData.Sprites);
-        score = blockData.Score;
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.color = blockData.BaseColor;
-        life = sprites.Count;
-        spriteRenderer.sprite = sprites[life - 1];
+        _sprites = new List<Sprite>(blockData.Sprites);
+        _score = blockData.Score;
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteRenderer.color = blockData.BaseColor;
+        _life = _sprites.Count;
+        _spriteRenderer.sprite = _sprites[_life - 1];
         MainModule main = GetComponent<ParticleSystem>().main;
-        main.startColor = spriteRenderer.color;
+        main.startColor = _spriteRenderer.color;
     }
 
     public void ApplyDamage()
     {
-        life--;
-        if (life < 1)
+        _life--;
+        if (_life < 1)
         {
-            spriteRenderer.enabled = false;
+            _spriteRenderer.enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<ParticleSystem>().Play();
         }
         else
         {
-            spriteRenderer.sprite = sprites[life - 1];
+            _spriteRenderer.sprite = _sprites[_life - 1];
         }
     }
 
