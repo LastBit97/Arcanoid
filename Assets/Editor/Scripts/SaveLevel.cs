@@ -4,25 +4,22 @@ using UnityEngine;
 
 public class SaveLevel
 {
-    public List<BlockObject> GetBlocks()
+    public void Save(GameLevel gameLevel)
     {
-        List<BlockObject> blocks = new List<BlockObject>();
-        GameObject[] allBlocks = GameObject.FindGameObjectsWithTag("Block");
+        gameLevel.Blocks = new List<BlockObject>();
+        Block[] blocks = GameObject.FindObjectsOfType<Block>();
 
 
-        foreach (var item in allBlocks)
+        foreach (var item in blocks)
         {
             BlockObject blockObject = new BlockObject
             {
-                Position = item.gameObject.transform.position
+                Position = item.gameObject.transform.position,
+
+                Block = item.BlockData
             };
 
-            if (item.TryGetComponent(out Block block))
-            {
-                blockObject.Block = block.BlockData;
-            }
-            blocks.Add(blockObject);
+            gameLevel.Blocks.Add(blockObject);
         }
-        return blocks;
     }
 }

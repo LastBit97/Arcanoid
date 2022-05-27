@@ -14,25 +14,30 @@ public class BallMove : MonoBehaviour
         ballRb.bodyType = RigidbodyType2D.Kinematic;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && !isActive)
-        {
-            BallActivate();
-        }
-    }
-
     private void BallActivate()
     {
-        isActive = true;
-        transform.SetParent(null);
-        ballRb.bodyType = RigidbodyType2D.Dynamic;
-        Move(); // м€ч стартует строго вверх
+        if (!isActive)
+        {
+            isActive = true;
+            transform.SetParent(null);
+            ballRb.bodyType = RigidbodyType2D.Dynamic;
+            Move(); // м€ч стартует строго вверх 
+        }
     }
 
     public void Move(float forceX = 0f)
     {
         ballRb.velocity = Vector2.zero;
         ballRb.AddForce(new Vector2(forceX * (ForceY / 2), ForceY));
+    }
+
+    private void OnEnable()
+    {
+        PlayerInput.OnClicked += BallActivate;
+    }
+
+    private void OnDisable()
+    {
+        PlayerInput.OnClicked -= BallActivate;
     }
 }

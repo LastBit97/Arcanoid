@@ -109,7 +109,7 @@ public class LevelEditor : EditorWindow
                 if (GUILayout.Button("Save Level"))
                 {
                     SaveLevel saveLevel = new SaveLevel();
-                    _gameLevel.Blocks = saveLevel.GetBlocks();
+                    saveLevel.Save(_gameLevel);
                     EditorUtility.SetDirty(_gameLevel);
                     Debug.Log("Level saved");
                 }

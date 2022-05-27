@@ -12,7 +12,7 @@ public class PlayerInput : MonoBehaviour
     {
 #if UNITY_EDITOR
         OnMove?.Invoke(Input.GetAxisRaw("Horizontal"));
-        if (Input.GetKeyDown(KeyCode.Backspace))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             OnClicked?.Invoke();
         }

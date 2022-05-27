@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PaddleController : MonoBehaviour
 {
-    private float _horizontalInput;
     private float _speed = 5.0f;
 
     private Rigidbody2D _rigidBody2d;
