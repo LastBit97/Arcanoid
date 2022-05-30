@@ -51,10 +51,6 @@ public class Block : MonoBehaviour, IDamageable
     private void OnDisable()
     {
         count--;
-        if (count < 1)
-        {
-            Debug.Log("Блоки закончились");
-        }
     }
 
 }
