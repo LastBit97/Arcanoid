@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelsData : MonoBehaviour
+public class LevelsData
 {
     private const string KeyName = "Save";
     private LevelsProgress _levelsProgress = new LevelsProgress();

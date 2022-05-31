@@ -28,6 +28,17 @@ public class LevelEditor : EditorWindow
         _parent = (Transform)EditorGUILayout.ObjectField(_parent, typeof(Transform), true);
         EditorGUILayout.Space(10);
 
+        if (GUILayout.Button("Clear keys"))
+        {
+            LevelsData levelsData = new LevelsData();
+            levelsData.Clear();
+            LevelIndex levelIndex = new LevelIndex();
+            levelIndex.Clear();
+            Debug.LogWarning("Clear keys");
+        }
+
+        EditorGUILayout.Space(10);
+
         if (_data == null)
         {
             if (GUILayout.Button("Load data"))
@@ -116,11 +127,7 @@ public class LevelEditor : EditorWindow
 
                 if (GUILayout.Button("Load Level"))
                 {
-                    GameObject[] allBlocks = GameObject.FindGameObjectsWithTag("Block");
-                    foreach (var item in allBlocks)
-                    {
-                        DestroyImmediate(item.gameObject);
-                    }
+                    FindObjectOfType<ClearLevel>().Clear();
 
                     BlocksGenerator generator = new BlocksGenerator();
                     generator.Generate(_gameLevel, _parent);
