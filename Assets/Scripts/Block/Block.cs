@@ -1,16 +1,19 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.ParticleSystem;
 
 public class Block : MonoBehaviour, IDamageable
 {
-    private static int count = 0;
+    private static int _count = 0;
 
     [SerializeField] private List<Sprite> _sprites;
     [SerializeField] private int _score;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private int _life;
+
+    public static event Action OnEnded;
+    public static event Action<int> OnDestroyed;
 
 #if UNITY_EDITOR
     public BlockData BlockData;
@@ -35,6 +38,7 @@ public class Block : MonoBehaviour, IDamageable
         {
             _spriteRenderer.enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
+            OnDestroyed?.Invoke(_score);
             GetComponent<ParticleSystem>().Play();
         }
         else
@@ -45,12 +49,17 @@ public class Block : MonoBehaviour, IDamageable
 
     private void OnEnable()
     {
-        count++;
+        _count++;
     }
 
     private void OnDisable()
     {
-        count--;
+        _count--;
+        
+        if (_count < 1)
+        {
+            OnEnded?.Invoke();
+        }
     }
 
 }

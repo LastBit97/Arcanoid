@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PaddleController : MonoBehaviour
@@ -43,5 +41,10 @@ public class PaddleController : MonoBehaviour
     private void Move(float moveX)
     {
         _moveX = moveX;
+    }
+
+    public void ResetPosition()
+    {
+        _rigidBody2d.position = new Vector2(0f, _rigidBody2d.position.y);
     }
 }

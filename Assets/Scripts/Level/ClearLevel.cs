@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ClearLevel : MonoBehaviour
@@ -10,6 +8,15 @@ public class ClearLevel : MonoBehaviour
         if (allBlocks.Length > 0)
         {
             foreach (var item in allBlocks)
+            {
+                DestroyItem(item.gameObject);
+            }
+        }
+
+        BallMove[] allBalls = FindObjectsOfType<BallMove>();
+        if (allBalls.Length > 0)
+        {
+            foreach (var item in allBalls)
             {
                 DestroyItem(item.gameObject);
             }
