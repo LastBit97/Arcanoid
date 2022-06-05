@@ -6,20 +6,18 @@ using UnityEngine.Events;
 public class PlayerLife : MonoBehaviour
 {
     private const int MAX_LIFE = 3;
-    private int _life;
+
     [SerializeField] private GameState _gameState;
     [SerializeField] private UnityEvent OnAllLifeLosted;
     [SerializeField] private UnityEvent OnLifeLosted;
     [SerializeField] private UnityEventInt UiUpdate;
 
-    public int GetLifeCount()
-    {
-        return _life;
-    }
+    public int Life { get; private set; }
+
     public void SetDefault()
     {
-        _life = MAX_LIFE;
-        UiUpdate.Invoke(_life);
+        Life = MAX_LIFE;
+        UiUpdate.Invoke(Life);
     }
 
     private void OnEnable()
@@ -36,8 +34,8 @@ public class PlayerLife : MonoBehaviour
     {
         if (_gameState.State == State.Gameplay)
         {
-            _life--;
-            if (_life < 1)
+            Life--;
+            if (Life < 1)
             {
                 OnAllLifeLosted.Invoke();
             }
@@ -46,7 +44,7 @@ public class PlayerLife : MonoBehaviour
                 OnLifeLosted.Invoke();
             }
 
-            UiUpdate.Invoke(_life);
+            UiUpdate.Invoke(Life);
         }
     }
 }

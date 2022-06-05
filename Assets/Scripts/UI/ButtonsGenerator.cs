@@ -23,7 +23,7 @@ public class ButtonsGenerator : MonoBehaviour
             Button button = Instantiate(_buttonPrefab, _content.transform);
             if (button.gameObject.TryGetComponent(out LevelButton levelButton))
             {
-                levelButton.SetData(levelsProgress.Levels[i], i + 1);
+                levelButton.SetData(levelsProgress.Levels[i], i);
             }
         }
     }

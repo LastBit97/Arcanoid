@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class LevelGenerator : MonoBehaviour
 {
@@ -26,5 +27,20 @@ public class LevelGenerator : MonoBehaviour
         }
         _gameState.SetState(State.Gameplay);
         OnGenerated?.Invoke();
+    }
+
+    public void GenerateNext()
+    {
+        LevelsData levelsData = new LevelsData();
+        int index = _levelIndex.GetIndex();
+        if (index < levelsData.GetLevelsProgress().Levels.Count - 1)
+        {
+            _levelIndex.SetIndex(index + 1);
+            Generate();
+        }
+        else
+        {
+            SceneManager.LoadSceneAsync("Main");
+        }
     }
 }

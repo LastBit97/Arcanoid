@@ -23,7 +23,6 @@ public class WindowController : MonoBehaviour
     public void NextLevel()
     {
         _endGameWindow.SetActive(false);
-        // add logic
     }
 
     public void ToHome()

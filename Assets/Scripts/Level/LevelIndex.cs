@@ -11,7 +11,7 @@ public class LevelIndex
 
     public int GetIndex()
     {
-        int index = 1;
+        int index = 0;
         if (PlayerPrefs.HasKey(KeyName))
         {
             index = PlayerPrefs.GetInt(KeyName);

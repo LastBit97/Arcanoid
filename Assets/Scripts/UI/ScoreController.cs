@@ -7,17 +7,13 @@ public class ScoreController : MonoBehaviour
     [SerializeField] private UnityEventInt UiUpdate;
     [SerializeField] private UnityEvent ThousandCollected;
     private const int ScoreToNextBonus = 1000;
-    private int _score;
 
-    public int GetScore()
-    {
-        return _score;
-    }
+    public int Score { get; private set; }
 
     public void SetDefault()
     {
-        _score = 0;
-        UiUpdate.Invoke(_score);
+        Score = 0;
+        UiUpdate.Invoke(Score);
     }
 
     private void OnEnable()
@@ -34,9 +30,9 @@ public class ScoreController : MonoBehaviour
     {
         if (_gameState.State == State.Gameplay)
         {
-            _score += value;
-            UiUpdate.Invoke(_score);
-            if (_score % ScoreToNextBonus == 0)
+            Score += value;
+            UiUpdate.Invoke(Score);
+            if (Score % ScoreToNextBonus == 0)
             {
                 ThousandCollected.Invoke();
             }
