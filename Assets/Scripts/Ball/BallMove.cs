@@ -8,6 +8,7 @@ public class BallMove : MonoBehaviour
     private Rigidbody2D ballRb;
     private bool isActive;
     private const float ForceY = 250;
+    [SerializeField] private BallSound _ballSound;
     private void Start()
     {
         ballRb = GetComponent<Rigidbody2D>();
@@ -22,6 +23,7 @@ public class BallMove : MonoBehaviour
             transform.SetParent(null);
             ballRb.bodyType = RigidbodyType2D.Dynamic;
             Move(); // м€ч стартует строго вверх 
+            _ballSound.PlaySoundAwake();
         }
     }
 

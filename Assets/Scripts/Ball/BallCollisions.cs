@@ -5,6 +5,7 @@ using UnityEngine;
 public class BallCollisions : MonoBehaviour
 {
     [SerializeField] private BallMove _ball;
+    [SerializeField] private BallSound _ballSound;
 
 
     private void Awake()
@@ -14,6 +15,7 @@ public class BallCollisions : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        _ballSound.PlaySoundCollision();
         if (collision.gameObject.TryGetComponent(out PaddleController paddle))
         {
             float touchPointX = collision.contacts[0].point.x;
