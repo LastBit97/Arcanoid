@@ -1309,7 +1309,6 @@ GameObject:
   - component: {fileID: 818817302}
   - component: {fileID: 818817305}
   - component: {fileID: 818817304}
-  - component: {fileID: 818817306}
   - component: {fileID: 818817303}
   m_Layer: 5
   m_Name: ExitButton
@@ -1382,7 +1381,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 818817306}
+      - m_Target: {fileID: 1431933408}
         m_TargetAssemblyTypeName: AppExit, Assembly-CSharp
         m_MethodName: Quit
         m_Mode: 1
@@ -1432,18 +1431,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818817301}
   m_CullTransparentMesh: 1
---- !u!114 &818817306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818817301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3248f6602a25a064999ef7e3497a35c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1088127191
 GameObject:
   m_ObjectHideFlags: 0
@@ -2063,6 +2050,7 @@ GameObject:
   - component: {fileID: 1431933407}
   - component: {fileID: 1431933406}
   - component: {fileID: 1431933405}
+  - component: {fileID: 1431933408}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2151,6 +2139,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1431933408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431933403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3248f6602a25a064999ef7e3497a35c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1509399598
 PrefabInstance:
   m_ObjectHideFlags: 0

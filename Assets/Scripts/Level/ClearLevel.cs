@@ -21,6 +21,22 @@ public class ClearLevel : MonoBehaviour
                 DestroyItem(item.gameObject);
             }
         }
+
+        Bonus[] bonuses = FindObjectsOfType<Bonus>();
+        if (bonuses.Length > 0)
+        {
+            foreach (var item in bonuses)
+            {
+                DestroyItem(item.gameObject);
+            }
+        }
+
+        Bullet[] bullets = FindObjectsOfType<Bullet>();
+        if (bullets.Length > 0)
+            foreach (var item in bullets)
+            {
+                item.gameObject.SetActive(false);
+            }
     }
 
     private void DestroyItem(GameObject game)

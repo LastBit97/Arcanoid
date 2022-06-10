@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Paddle
   - Block
+  - BulletsPool
   layers:
   - Default
   - TransparentFX
@@ -13,10 +14,10 @@ TagManager:
   - 
   - Water
   - UI
-  - blocks
   - balls
-  - 
-  - 
+  - blocks
+  - bullets
+  - walls
   - 
   - 
   - 

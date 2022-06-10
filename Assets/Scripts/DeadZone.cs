@@ -6,9 +6,11 @@ public class DeadZone : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out BallMove ball))
-        {
-            Destroy(ball.gameObject);
-        }
+        Destroy(collision.gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(collision.gameObject);
     }
 }

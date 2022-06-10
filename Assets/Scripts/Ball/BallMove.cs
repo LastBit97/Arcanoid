@@ -5,15 +5,12 @@ using UnityEngine;
 
 public class BallMove : MonoBehaviour
 {
-    private Rigidbody2D ballRb;
+    [SerializeField] private Rigidbody2D ballRb;
     private bool isActive;
     private const float ForceY = 250;
+    [Range(-3f, 3f)]
+    [SerializeField] private float _forceX;
     [SerializeField] private BallSound _ballSound;
-    private void Start()
-    {
-        ballRb = GetComponent<Rigidbody2D>();
-        ballRb.bodyType = RigidbodyType2D.Kinematic;
-    }
 
     private void BallActivate()
     {
@@ -22,7 +19,7 @@ public class BallMove : MonoBehaviour
             isActive = true;
             transform.SetParent(null);
             ballRb.bodyType = RigidbodyType2D.Dynamic;
-            Move(); // м€ч стартует строго вверх 
+            Move(_forceX); // м€ч стартует строго вверх 
             _ballSound.PlaySoundAwake();
         }
     }
@@ -35,11 +32,19 @@ public class BallMove : MonoBehaviour
 
     private void OnEnable()
     {
+        ballRb.bodyType = RigidbodyType2D.Kinematic;
         PlayerInput.OnClicked += BallActivate;
     }
 
     private void OnDisable()
     {
         PlayerInput.OnClicked -= BallActivate;
+    }
+
+    public void StartClone(float direction)
+    {
+        isActive = true;
+        ballRb.bodyType = RigidbodyType2D.Dynamic;
+        Move(direction);
     }
 }

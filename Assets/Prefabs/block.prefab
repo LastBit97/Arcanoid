@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6539411811252907672}
   - component: {fileID: 2043105334221528731}
   - component: {fileID: 2664900471604681520}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: block
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -124,10 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad240a446b824d4d9a0fe6f4d65c074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites: []
-  score: 0
-  spriteRenderer: {fileID: 0}
-  life: 0
+  _sprites: []
+  _score: 0
+  _spriteRenderer: {fileID: 0}
+  _life: 0
   BlockData: {fileID: 0}
 --- !u!198 &2043105334221528731
 ParticleSystem:

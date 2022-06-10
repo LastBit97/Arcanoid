@@ -14,6 +14,7 @@ public class Block : MonoBehaviour, IDamageable
 
     public static event Action OnEnded;
     public static event Action<int> OnDestroyed;
+    public static event Action<Vector2> OnDestroyedPosition;
 
 #if UNITY_EDITOR
     public BlockData BlockData;
@@ -39,6 +40,7 @@ public class Block : MonoBehaviour, IDamageable
             _spriteRenderer.enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
             OnDestroyed?.Invoke(_score);
+            OnDestroyedPosition?.Invoke(transform.position);
             GetComponent<ParticleSystem>().Play();
         }
         else
