@@ -7,6 +7,7 @@ TagManager:
   - Paddle
   - Block
   - BulletsPool
+  - UfosPool
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - blocks
   - bullets
   - walls
-  - 
+  - ufo
   - 
   - 
   - 

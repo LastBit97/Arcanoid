@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac8f4709c723c4546959bdc427b0de5b, type: 3}
-  m_Name: Immortal
+  m_Name: RedBlock
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 1238562414470602324, guid: 311a0a5ec56ebf24896ef7815d2ea6eb, type: 3}
-  Sprites: []
+  Prefab: {fileID: 6539411811252907673, guid: 1e227115306f4fc46afbd2c078a21fd7, type: 3}
+  Sprites:
+  - {fileID: 21300000, guid: 5fe3daa99a40f3840ad44743ddfd2ee6, type: 3}
+  - {fileID: 21300000, guid: 2617653869e0e2647b5a50d0a95c3796, type: 3}
+  - {fileID: 21300000, guid: e8057c1e565aeb0458b6adb81acb0f78, type: 3}
   BaseColor: {r: 0.9098039, g: 0.25490198, b: 0.09411765, a: 1}
-  Score: 0
+  Score: 150

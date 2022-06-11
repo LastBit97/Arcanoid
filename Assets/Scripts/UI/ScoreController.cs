@@ -6,7 +6,7 @@ public class ScoreController : MonoBehaviour
     [SerializeField] private GameState _gameState;
     [SerializeField] private UnityEventInt UiUpdate;
     [SerializeField] private UnityEvent ThousandCollected;
-    private const int ScoreToNextBonus = 1000;
+    private const int ScoreToNextBonus = 1500;
 
     public int Score { get; private set; }
 
@@ -20,12 +20,14 @@ public class ScoreController : MonoBehaviour
     {
         Block.OnDestroyed += ScoreCollect;
         Bonus.OnAdded += ScoreCollect;
+        Ufo.OnDestroyed += ScoreCollect;
     }
 
     private void OnDisable()
     {
         Block.OnDestroyed -= ScoreCollect;
         Bonus.OnAdded -= ScoreCollect;
+        Ufo.OnDestroyed -= ScoreCollect;
     }
 
     private void ScoreCollect(int value)
