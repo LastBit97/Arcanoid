@@ -7,7 +7,7 @@ public class BonusAttach : MonoBehaviour
     [SerializeField] private BoxCollider2D _boxCollider2D;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [Space]
-    [SerializeField] private Bonus _bonus;
+    [SerializeField] public Bonus _bonus;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

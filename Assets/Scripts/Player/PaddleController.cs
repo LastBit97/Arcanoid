@@ -7,6 +7,10 @@ public class PaddleController : MonoBehaviour
     private Rigidbody2D _rigidBody2d;
     private SpriteRenderer _spriteRenderer;
 
+    [SerializeField] private ParticleSystem _leftMuzzle;
+    [SerializeField] private ParticleSystem _rightMuzzle;
+    [SerializeField] private PaddleSound _paddleSound;
+
     private float borderPosition = 2.4f;
     private float _moveX = 0f;
 
@@ -14,6 +18,8 @@ public class PaddleController : MonoBehaviour
     {
         _rigidBody2d = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _leftMuzzle.Stop();
+        _rightMuzzle.Stop();
     }
 
     void FixedUpdate()
@@ -46,5 +52,12 @@ public class PaddleController : MonoBehaviour
     public void ResetPosition()
     {
         _rigidBody2d.position = new Vector2(0f, _rigidBody2d.position.y);
+    }
+
+    public void PlayEffects()
+    {
+        _leftMuzzle.Play();
+        _rightMuzzle.Play();
+        _paddleSound.PlaySoundShot();
     }
 }

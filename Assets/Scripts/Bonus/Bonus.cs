@@ -6,6 +6,9 @@ public abstract class Bonus : MonoBehaviour
 {
     [SerializeField] protected int _score;
     [SerializeField] protected float _time = 4f;
+
+    [field: SerializeField]
+    [SerializeField] public virtual int Chance { get; set; } = 15;
     private float _currentTime;
     private const float TimeStep = 0.5f;   
 

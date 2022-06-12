@@ -154,3 +154,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _score: 80
   _time: 4
+  <Chance>k__BackingField: 100

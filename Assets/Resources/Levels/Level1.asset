@@ -13,85 +13,92 @@ MonoBehaviour:
   m_Name: Level1
   m_EditorClassIdentifier: 
   Blocks:
-  - Position: {x: 0.21999991, y: 1.2249998, z: 0}
-    Block: {fileID: 11400000, guid: 453b82b42ba133a45804a5d393610395, type: 2}
-  - Position: {x: -0.1450001, y: 1.2249998, z: 0}
-    Block: {fileID: 11400000, guid: 453b82b42ba133a45804a5d393610395, type: 2}
-  - Position: {x: 1.3149999, y: 0.8599998, z: 0}
-    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
   - Position: {x: 0.9499999, y: 0.49499977, z: 0}
     Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
   - Position: {x: 0.5849999, y: 0.12999976, z: 0}
     Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
-  - Position: {x: -0.5100001, y: 0.12999976, z: 0}
-    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
-  - Position: {x: -0.8750001, y: 0.49499977, z: 0}
-    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
   - Position: {x: -1.2400001, y: 0.8599998, z: 0}
-    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
-  - Position: {x: 0.9499999, y: 0.12999976, z: 0}
-    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
-  - Position: {x: 1.3149999, y: 0.49499977, z: 0}
-    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
-  - Position: {x: 2.045, y: 1.2249998, z: 0}
     Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
   - Position: {x: 1.68, y: 0.8599998, z: 0}
     Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
+  - Position: {x: 0.9499999, y: 3.415, z: 0}
+    Block: {fileID: 11400000, guid: 453b82b42ba133a45804a5d393610395, type: 2}
+  - Position: {x: 0.5849999, y: 3.0499997, z: 0}
+    Block: {fileID: 11400000, guid: c504e4f474c126f42adc9937168944b2, type: 2}
+  - Position: {x: -1.6050001, y: 0.8599998, z: 0}
+    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
+  - Position: {x: -0.8750001, y: 0.12999976, z: 0}
+    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
+  - Position: {x: 0.21999991, y: 1.2249998, z: 0}
+    Block: {fileID: 11400000, guid: 453b82b42ba133a45804a5d393610395, type: 2}
   - Position: {x: 0.5849999, y: -0.23500025, z: 0}
     Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
   - Position: {x: 0.21999991, y: -0.23500025, z: 0}
     Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
-  - Position: {x: -0.1450001, y: -0.23500025, z: 0}
-    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
-  - Position: {x: -0.5100001, y: -0.23500025, z: 0}
-    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
-  - Position: {x: -0.8750001, y: 0.12999976, z: 0}
-    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
-  - Position: {x: -1.2400001, y: 0.49499977, z: 0}
-    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
-  - Position: {x: -1.6050001, y: 0.8599998, z: 0}
-    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
-  - Position: {x: -1.9700001, y: 1.2249998, z: 0}
-    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
-  - Position: {x: 0.9499999, y: 3.0499997, z: 0}
-    Block: {fileID: 11400000, guid: c504e4f474c126f42adc9937168944b2, type: 2}
-  - Position: {x: 0.5849999, y: 3.0499997, z: 0}
-    Block: {fileID: 11400000, guid: c504e4f474c126f42adc9937168944b2, type: 2}
-  - Position: {x: -0.8750001, y: 3.0499997, z: 0}
-    Block: {fileID: 11400000, guid: c504e4f474c126f42adc9937168944b2, type: 2}
   - Position: {x: -0.5100001, y: 3.0499997, z: 0}
     Block: {fileID: 11400000, guid: c504e4f474c126f42adc9937168944b2, type: 2}
-  - Position: {x: 0.21999991, y: 2.3199997, z: 0}
+  - Position: {x: 1.3149999, y: 0.8599998, z: 0}
     Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
-  - Position: {x: -0.1450001, y: 2.3199997, z: 0}
-    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
-  - Position: {x: 0.21999991, y: 3.0499997, z: 0}
-    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
-  - Position: {x: -0.1450001, y: 3.0499997, z: 0}
-    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
-  - Position: {x: 0.5849999, y: 2.685, z: 0}
-    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
-  - Position: {x: 0.21999991, y: 2.685, z: 0}
-    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
-  - Position: {x: -0.1450001, y: 2.685, z: 0}
-    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
-  - Position: {x: -0.5100001, y: 2.685, z: 0}
-    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
-  - Position: {x: 1.3149999, y: 3.415, z: 0}
-    Block: {fileID: 11400000, guid: 453b82b42ba133a45804a5d393610395, type: 2}
-  - Position: {x: 0.9499999, y: 3.415, z: 0}
-    Block: {fileID: 11400000, guid: 453b82b42ba133a45804a5d393610395, type: 2}
   - Position: {x: 0.5849999, y: 3.415, z: 0}
-    Block: {fileID: 11400000, guid: 453b82b42ba133a45804a5d393610395, type: 2}
-  - Position: {x: 0.21999991, y: 3.415, z: 0}
-    Block: {fileID: 11400000, guid: 453b82b42ba133a45804a5d393610395, type: 2}
-  - Position: {x: -0.1450001, y: 3.415, z: 0}
-    Block: {fileID: 11400000, guid: 453b82b42ba133a45804a5d393610395, type: 2}
-  - Position: {x: -0.5100001, y: 3.415, z: 0}
-    Block: {fileID: 11400000, guid: 453b82b42ba133a45804a5d393610395, type: 2}
-  - Position: {x: -0.8750001, y: 3.415, z: 0}
     Block: {fileID: 11400000, guid: 453b82b42ba133a45804a5d393610395, type: 2}
   - Position: {x: -1.2400001, y: 3.415, z: 0}
     Block: {fileID: 11400000, guid: 453b82b42ba133a45804a5d393610395, type: 2}
+  - Position: {x: -0.8750001, y: 0.49499977, z: 0}
+    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
+  - Position: {x: 0.21999991, y: 2.685, z: 0}
+    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
+  - Position: {x: -0.5100001, y: 0.12999976, z: 0}
+    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
+  - Position: {x: -0.5100001, y: 3.415, z: 0}
+    Block: {fileID: 11400000, guid: 453b82b42ba133a45804a5d393610395, type: 2}
+  - Position: {x: 0.21999991, y: 2.3199997, z: 0}
+    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
+  - Position: {x: 0.5849999, y: 2.685, z: 0}
+    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
+  - Position: {x: -0.8750001, y: 3.0499997, z: 0}
+    Block: {fileID: 11400000, guid: c504e4f474c126f42adc9937168944b2, type: 2}
+  - Position: {x: -0.1450001, y: 2.685, z: 0}
+    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
+  - Position: {x: -0.1450001, y: 3.415, z: 0}
+    Block: {fileID: 11400000, guid: 453b82b42ba133a45804a5d393610395, type: 2}
+  - Position: {x: 1.3149999, y: 3.415, z: 0}
+    Block: {fileID: 11400000, guid: 453b82b42ba133a45804a5d393610395, type: 2}
+  - Position: {x: -1.2400001, y: 0.49499977, z: 0}
+    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
+  - Position: {x: 1.3149999, y: 0.49499977, z: 0}
+    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
+  - Position: {x: 0.9499999, y: 0.12999976, z: 0}
+    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
+  - Position: {x: 0.21999991, y: 3.0499997, z: 0}
+    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
+  - Position: {x: -0.5100001, y: -0.23500025, z: 0}
+    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
+  - Position: {x: -0.5100001, y: 2.685, z: 0}
+    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
+  - Position: {x: -0.1450001, y: 2.3199997, z: 0}
+    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
+  - Position: {x: -0.8750001, y: 3.415, z: 0}
+    Block: {fileID: 11400000, guid: 453b82b42ba133a45804a5d393610395, type: 2}
+  - Position: {x: -1.9700001, y: 1.2249998, z: 0}
+    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
+  - Position: {x: 0.21999991, y: 3.415, z: 0}
+    Block: {fileID: 11400000, guid: 453b82b42ba133a45804a5d393610395, type: 2}
+  - Position: {x: 2.045, y: 1.2249998, z: 0}
+    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
+  - Position: {x: -0.1450001, y: 1.2249998, z: 0}
+    Block: {fileID: 11400000, guid: 453b82b42ba133a45804a5d393610395, type: 2}
+  - Position: {x: 0.9499999, y: 3.0499997, z: 0}
+    Block: {fileID: 11400000, guid: c504e4f474c126f42adc9937168944b2, type: 2}
+  - Position: {x: -0.1450001, y: -0.23500025, z: 0}
+    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
+  - Position: {x: -0.1450001, y: 3.0499997, z: 0}
+    Block: {fileID: 11400000, guid: 1dbfccc9eef866f4eb1638b1b1c0b2d9, type: 2}
   Bonuses:
   - {fileID: 520682146945196385, guid: b63aa49267b99a041957d33453ddb559, type: 3}
+  - {fileID: 6169250941863619974, guid: d1e7ce301b9004a458ba5840403d4160, type: 3}
+  - {fileID: 8004903561435733615, guid: 70c44dcb2f580254289332058d0dca95, type: 3}
+  - {fileID: 4056672679171360224, guid: 0068f2cefb869ca43862dea86f41a2c4, type: 3}
+  - {fileID: 520682146945196385, guid: b63aa49267b99a041957d33453ddb559, type: 3}
+  - {fileID: 6169250941863619974, guid: d1e7ce301b9004a458ba5840403d4160, type: 3}
+  - {fileID: 8004903561435733615, guid: 70c44dcb2f580254289332058d0dca95, type: 3}
+  - {fileID: 4056672679171360224, guid: 0068f2cefb869ca43862dea86f41a2c4, type: 3}

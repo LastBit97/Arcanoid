@@ -33,6 +33,7 @@ public class ShootingPaddleBonus : Bonus
     {
         while (true)
         {
+            PlayParticles();
             ActivateBullet(OffsetX);
             ActivateBullet(-OffsetX);
             yield return new WaitForSeconds(0.5f);
@@ -46,6 +47,15 @@ public class ShootingPaddleBonus : Bonus
         {
             bullet.transform.position = new Vector2(transform.position.x + offsetX, transform.position.y + OffsetY);
             bullet.SetActive(true);
+        }
+    }
+
+    private void PlayParticles()
+    {
+        PaddleController paddleController = GetComponentInParent<PaddleController>();
+        if (paddleController != null)
+        {
+            paddleController.PlayEffects();
         }
     }
 

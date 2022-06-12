@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class CloneBonus : Bonus
 {
     public override void Apply()
