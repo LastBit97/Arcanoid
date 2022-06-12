@@ -10,6 +10,7 @@ public class Block : MonoBehaviour, IDamageable
     [SerializeField] private List<Sprite> _sprites;
     [SerializeField] private int _score;
     [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private BoxCollider2D _boxCollider;
     [SerializeField] private int _life;
 
     public static event Action OnEnded;
@@ -25,6 +26,7 @@ public class Block : MonoBehaviour, IDamageable
         _sprites = new List<Sprite>(blockData.Sprites);
         _score = blockData.Score;
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _boxCollider = GetComponent<BoxCollider2D>();
         _spriteRenderer.color = blockData.BaseColor;
         _life = _sprites.Count;
         _spriteRenderer.sprite = _sprites[_life - 1];
@@ -35,7 +37,7 @@ public class Block : MonoBehaviour, IDamageable
     public void ApplyDamage()
     {
         _life--;
-        if (_life < 1)
+        if (_life < 1 || _boxCollider.isTrigger)
         {
             _spriteRenderer.enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
@@ -51,11 +53,15 @@ public class Block : MonoBehaviour, IDamageable
 
     private void OnEnable()
     {
+        LightningBonus.OnLightning += SetTrigger;
+
         _count++;
     }
 
     private void OnDisable()
     {
+        LightningBonus.OnLightning -= SetTrigger;
+
         _count--;
         
         if (_count < 1)
@@ -64,4 +70,8 @@ public class Block : MonoBehaviour, IDamageable
         }
     }
 
+    private void SetTrigger(bool isLightning)
+    {
+        _boxCollider.isTrigger = isLightning;
+    }
 }

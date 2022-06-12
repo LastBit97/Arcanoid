@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BallCollisions : MonoBehaviour
@@ -25,6 +23,14 @@ public class BallCollisions : MonoBehaviour
             _ball.Move(directionBall * Mathf.Abs(differenceX));
         }
 
+        if (collision.gameObject.TryGetComponent(out IDamageable damageable))
+        {
+            damageable.ApplyDamage();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.gameObject.TryGetComponent(out IDamageable damageable))
         {
             damageable.ApplyDamage();
